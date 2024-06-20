@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import React from 'react';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
+import Register from './pages/Register';
+import Chat from './pages/Chat';
+import Login from './pages/Login';
+import SetAvatar from './pages/SetAvatar';
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <BrowserRouter>
+        {/* <Routes>
+        <Route path="/" element={<Chat></Chat>}></Route>
 
-export default App;
+          <Route path="/register" element={<Register></Register>}></Route>
+          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/setAvatar" element={<SetAvatar></SetAvatar>}></Route>
+
+        </Routes> */}
+        <Routes>
+        <Route path="/" element={<Chat />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/setAvatar" element={<SetAvatar />} />
+      </Routes>
+    </BrowserRouter>
+  )
+}
